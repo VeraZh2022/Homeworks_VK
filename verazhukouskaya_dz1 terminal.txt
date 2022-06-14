@@ -1,0 +1,195 @@
+Вера Жуковская
+Telegram - @verisola
+
+HW_1. The first part
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я: pwd
+/Users/verazhukouskaya
+MacBook-Pro-13-Vera:~ verazhukouskaya$
+
+2) Создать папку: mkdir group30_free
+
+3) Зайти в папку: cd group30_free
+MacBook-Pro-13-Vera:group30_free verazhukouskaya$
+
+4) Создать 3 папки: mkdir es_1 es_2 es_3
+//Тут можно написать в более удобном формате: mkdir es_{1,2,3}
+
+5) Зайти в любую папку: cd es_1
+MacBook-Pro-13-Vera:es_1 verazhukouskaya$
+
+6) Создать 5 файлов (3 txt, 2 json): touch ess_11.txt ess_12.txt ess_13.txt js_11.json js_12.json
+//Здесь тоже можно поудобнее запрос сформулировать: touch ess_{11,12,13}.txt js_{11,12}.json
+7) Создать 3 папки: mkdir ma_1 ma_2 ma_3
+
+8. Вывести список содержимого папки: ls -la
+drwxr-xr-x  10 verazhukouskaya  staff  320 May 20 14:38 .
+drwxr-xr-x   6 verazhukouskaya  staff  192 May 20 14:29 ..
+-rw-r--r--   1 verazhukouskaya  staff    0 May 20 14:34 ess_11.txt
+-rw-r--r--   1 verazhukouskaya  staff    0 May 20 14:34 ess_12.txt
+-rw-r--r--   1 verazhukouskaya  staff    0 May 20 14:34 ess_13.txt
+-rw-r--r--   1 verazhukouskaya  staff    0 May 20 14:34 js_11.json
+-rw-r--r--   1 verazhukouskaya  staff    0 May 20 14:34 js_12.json
+drwxr-xr-x   2 verazhukouskaya  staff   64 May 20 14:38 ma_1
+drwxr-xr-x   2 verazhukouskaya  staff   64 May 20 14:38 ma_2
+drwxr-xr-x   2 verazhukouskaya  staff   64 May 20 14:38 ma_3
+
+9) + Открыть любой txt файл: vim ess_11.txt
+
+10) + написать туда что-нибудь, любой текст:
+//Сначала нажимаем i (insert), чтобы перейти в режим редактирования текста
+aprendo espanol
+porque quiero
+hablar
+muy bien
+~
+-- INSERT --
+
+
+11) + сохранить и выйти:
+aprendo espanol
+porque quiero
+hablar
+muy bien
+~
+~
+:wq
+//Сначала нужно нажать esc, чтобы выйти из режима редактирования
+"плюс enter"
+
+
+12) Выйти из папки на уровень выше: cd ..
+MacBook-Pro-13-Vera:group30_free verazhukouskaya$
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку:
+  a)mv es_1/ess_11.txt es_2/ess_11.txt
+    mv es_1/js_11.json es_3/js_11.json
+
+  b)mv es_3/ess_12.txt es_3/js_11.json es_2/
+
+//При перемещении/копировании нескольких файлов можно обойтись одной командой, применив фигурные скобки
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку:
+   a)cp es_1/ess_13.txt es_2/ess_13.txt
+     cp es_1/js_12.json es_2/js_12.json
+
+   b)cp es_2/ess_13.txt es_2/js_12.json es_3/ 
+
+15) Найти файл по имени: mdfind js_11.json
+/Users/verazhukouskaya/group30_free/es_3/js_11.json
+/Users/verazhukouskaya/Documents/QA VK/HW/verazhukouskaya_dz1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает:
+    a) group30_free verazhukouskaya$ grep -R bien .
+
+       ./es_2/ess_11.txt:muy bien
+
+    b) es_2 verazhukouskaya$ grep bien ess_11.txt
+
+       muy bien
+//Эти команды выводят искомое значение, но не позволяют отслеживать изменения в реальном времени. А для того, чтобы видеть строки, содержащие "bien" в реальном времени, grep можно скомбинировать с tail. Или же обойтись tail в целом, grep здесь опционален
+
+    c) tail -f es_3/ess_12.txt //Для отслеживания изменений файла
+
+      //выводит все строки из файла. если параллельно вносить в него изм-ия и сохранять, они сразу отражаются в терминале.
+      чтб остановиться - ctrl+c
+
+
+17) вывести несколько первых строк из текстового файла: head -n 2 ess_11.txt
+aprendo espanol
+porque quiero
+//Сейчас ты находишься в папке group_30_free, и терминал будет искать файл ess_11.txt именно в этой папке. Для того, чтобы повзаимодействовать с файлом, расположенным в другой папке, нужно указать относительный путь: es_2/ess_11.txt
+18) вывести несколько последних строк из текстового файла: tail -n 2 ess_11.txt
+hablar
+muy bien
+//Сейчас ты находишься в папке group_30_free, и терминал будет искать файл ess_11.txt именно в этой папке. Для того, чтобы повзаимодействовать с файлом, расположенным в другой папке, нужно указать относительный путь: es_2/ess_11.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает:
+  a)less ess_11.txt
+
+  aprendo espanol
+  porque quiero
+  hablar
+  muy bien
+  ess_11.txt (END)
+  // press q
+
+  b)less group30_free/es_3/ess_12.txt
+
+  1
+  2
+  3
+  muy
+  bien
+  trato de traducir
+  esta palabra
+  esta frase
+  no muy
+  si esto es muy
+  hfgvudksjhvdkjf
+  ljnhvhjfnvsd
+  group30_free/es_3/ess_12.txt (END)
+
+  // press q
+
+'также просмотрела содержимое данного длинного файла с помощью less'
+//Здесь тоже нужно путь дописать. Или перейти в папку, в которой файл лежит :)
+
+
+20) вывести дату и время: date
+Fri May 20 18:21:33 CEST 2022
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request:
+curl "http://162.55.220.72:5005/get_method?name=VeraZh&age=40"
+
+[
+  "VeraZh",
+  "40"
+]
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13:
+-создан файл verazhukouskaya_dz1_script.sh с данными:
+#!/bin/bash
+cd group30_free
+mkdir es_1 es_2 es_3
+cd es_1
+touch ess_11.txt ess_12.txt ess_13.txt js_11.json js_12.json
+mkdir ma_1 ma_2 ma_3
+ls -la
+mv ../es_1/ess_11.txt ../es_2/ess_11.txt
+mv ../es_1/js_11.json ../es_3/js_11.json
+-добавлены права execute с помощью команды chmod a+x verazhukouskaya_dz1_script.sh
+-rwxr-xr-x@  1 verazhukouskaya  staff    215 May 23 16:56 verazhukouskaya_dz1_script.sh
+-выполнение ./verazhukouskaya_dz1_script.sh
+
+mkdir: es_1: File exists
+mkdir: es_2: File exists
+mkdir: es_3: File exists
+mkdir: ma_1: File exists
+mkdir: ma_2: File exists
+mkdir: ma_3: File exists
+total 24
+drwxr-xr-x  11 verazhukouskaya  staff   352 May 23 17:25 .
+drwxr-xr-x   6 verazhukouskaya  staff   192 May 20 14:29 ..
+-rw-r--r--@  1 verazhukouskaya  staff  6148 May 20 15:32 .DS_Store
+-rw-r--r--@  1 verazhukouskaya  staff     8 May 23 17:33 ess_11.txt
+-rw-r--r--   1 verazhukouskaya  staff     0 May 23 17:33 ess_12.txt
+-rw-r--r--   1 verazhukouskaya  staff     0 May 23 17:33 ess_13.txt
+-rw-r--r--   1 verazhukouskaya  staff     0 May 23 17:33 js_11.json
+-rw-r--r--   1 verazhukouskaya  staff     0 May 23 17:33 js_12.json
+drwxr-xr-x   2 verazhukouskaya  staff    64 May 20 14:38 ma_1
+drwxr-xr-x   2 verazhukouskaya  staff    64 May 20 14:38 ma_2
+drwxr-xr-x   2 verazhukouskaya  staff    64 May 20 14:38 ma_3
+MacBook-Pro-13-Vera:~ verazhukouskaya$
+Ранее созданные папки не дублировал, в ранее созданных аналогичных файлах обновились даты,
+перемещение успешно.
+//Со скриптом всё хорошо, за исключением названия папки: оно отсылает к корневой папке ДЗ. Это ни в коем случае не ошибка, но может затруднить организацию домашних заданий по папкам
+
+=====================
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd foldername
