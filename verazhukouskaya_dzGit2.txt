@@ -1,0 +1,114 @@
+Вера Жуковская
+Telegram - @verisola
+
+GitHub. HW_2
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+mkdir 4\ github_terminal
+cd 4\ github_terminal
+git init
+
+Initialized empty Git repository in /Users/verazhukouskaya/Documents/QA VK/HW/4 github_terminal/.git/
+
+echo "This repository was created by terminal" >> README.md
+
+Далее создаю файл, чтб потом его закомитить и только после этого смогу создавать ветки. Без файла не даёт.
+
+cat > file_help.txt
+ввод данных
+enter
+ctrl+d
+
+git add .
+git status
+git commit -m "committing file_help.txt for next creating branches"
+git branch Postman
+git branch                                                                                                                                          13:36:10
+  Postman
+* master
+
+git branch Jmeter; git branch CheckLists; git branch Bag_Reports; git branch SQL; git branch Charles; git branch Mobile_testing
+git branch                                                                                                                                         14:05:46
+  Bag_Reports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+* master
+
+В п.1 - Вы пошли длинным путём :) Если бы создали репозиторий через веь-интерфейс и потом клонировали - было бы проще.
+
+Вместо добавления в коммит пустого файла можно было бы сделать пустой коммит, как-то так: git commit --allow-empty -m "Initial commit"
+
+
+2. Запушить все ветки на внешний репозиторий
+git remote add origin git@github.com:VeraZh2022/4_github_terminal.git
+curl -u 'VeraZh2022:***token***' https://api.github.com/user/repos -d '{"name":"4_github_terminal"}'
+git push --set-upstream origin master
+git push origin --all
+
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:VeraZh2022/4_github_terminal.git
+ * [new branch]      Bag_Reports -> Bag_Reports
+ * [new branch]      Charles -> Charles
+ * [new branch]      CheckLists -> CheckLists
+ * [new branch]      Jmeter -> Jmeter
+ * [new branch]      Mobile_testing -> Mobile_testing
+ * [new branch]      Postman -> Postman
+ * [new branch]      SQL -> SQL
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+Только заметила опечатку, поэтому переименовала ветку на локальном и внешнем репозиториях:
+git branch -m Bag_Reports Bug_Reports
+git push origin :Bag_Reports Bug_Reports                                                                                                           14:33:10
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:VeraZh2022/4_github_terminal.git
+ - [deleted]         Bag_Reports
+ * [new branch]      Bug_Reports -> Bug_Reports
+
+git checkout Bug_Reports
+cat > Bug_report_pattern.txt
+ввод данных
+enter
+ctrl+d
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add .
+git commit -m "Bug_report_pattern.txt"
+git push origin Bug_Reports
+
+5. Вмержить ветку Bag Reports в Main
+git checkout master
+git merge Bug_reports -m "merge bug report pattern to master"
+
+6. Запушить main на внешний репозиторий.
+git push origin master
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout CheckLists
+cat > Checklist_pattern.txt
+ввод данных
+enter
+ctrl+d
+
+8. Запушить структуру на внешний репозиторий
+git add .
+git commit -m "pushing checklist_pattern.txt"
+git push origin CheckLists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+merge commit: "merging branch CheckLists into master"
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout master
+git fetch
+git pull

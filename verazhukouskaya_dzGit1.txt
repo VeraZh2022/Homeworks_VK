@@ -1,0 +1,268 @@
+Вера Жуковская
+Telegram - @verisola
+
+GIT Homework 1
+
+Для выполнения задания у вас должен быть установлен для Windows - GitBash.
+Создан аккаунт в GitHub
+
+Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстовый файл как в первом ДЗ по Terminal.
+ MacBook-Pro-13-Vera:3 github_terminal verazhukouskaya$ touch verazhukouskaya_dzGit
+
+ 2. Сценарий перенесите в этот файл.
+ MacBook-Pro-13-Vera:3 github_terminal verazhukouskaya$ cat > verazhukouskaya_dzGit
+ (скопировала сценарий в терминал, enter, ctrl+c)
+
+ 3. Напротив каждого действия - напишите команду в GitBash
+ (вношу через atom, открывая сам файл txt)
+
+Файл со сценарием и ссылку (мой гит https://github.com/VeraZh2022?tab=repositories) на свой гит хаб отправляйте менторам на проверку.
+
+JSON
+ 4. Создать внешний репозиторий c названием JSON.
+A) Расценила п.3 буквально и решила, что надо создать с помощью терминала) Не буду копировать всю инфу, к-ю отдал терминал, а скопирую команды и только финальный выход инф-и:
+MacBook-Pro-13-Vera:3 github_terminal verazhukouskaya$ mkdir JSON
+3 github_terminal verazhukouskaya$ cd JSON/
+JSON verazhukouskaya$ git init
+JSON verazhukouskaya$ echo "This repository was created by terminal" >> README.md
+JSON verazhukouskaya$ git add .
+JSON verazhukouskaya$ git commit -m "initial commit"
+JSON verazhukouskaya$ git branch -M main
+JSON verazhukouskaya$ git remote add origin git@github.com:VeraZh2022/JSON.git
+JSON verazhukouskaya$ curl -u 'VeraZh2022:***token***' https://api.github.com/user/repos -d '{"name":"JSON"}'
+JSON verazhukouskaya$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 274 bytes | 274.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:VeraZh2022/JSON.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+MacBook-Pro-13-Vera:JSON verazhukouskaya$
+
+B) уже (через github.com и finder) переименовала репозиторий в 'JSON by terminal' и создала новый 'JSON' (через github.com).
+
+ 5. Клонировать репозиторий JSON на локальный компьютер.
+3 github_terminal verazhukouskaya$ git clone https://github.com/VeraZh2022/JSON.git
+
+ 6. Внутри локального JSON создать файл “new.json”.
+3 github_terminal verazhukouskaya$ cd JSON
+JSON verazhukouskaya$ touch new.json
+
+ 7. Добавить файл под гит.
+JSON verazhukouskaya$ git status
+
+JSON verazhukouskaya$ git add new.json
+
+JSON verazhukouskaya$ git status
+
+ 8. Закоммитить файл.
+JSON verazhukouskaya$ git commit -m "new.json is commited"
+
+ 9. Отправить файл на внешний GitHub репозиторий.
+JSON verazhukouskaya$ git push
+
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON.
+JSON verazhukouskaya$ vim new.json
+insert
+внесла данные
+enter
+escape
+:wq
+enter
+
+ 11. Отправить изменения на внешний репозиторий.
+JSON verazhukouskaya$ git status
+
+JSON verazhukouskaya$ git add new.json
+
+JSON verazhukouskaya$ git commit -m "edited file with name, age, pets, salary"
+
+JSON verazhukouskaya$ git push
+
+ 12. Создать файл preferences.json
+ JSON verazhukouskaya$ touch preferences.json
+
+ 13. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, страна которую хотели бы посетить) в формате JSON.
+JSON verazhukouskaya$ vim preferences.jso
+insert
+ внесла данные
+enter
+escape
+:wq
+enter
+
+ 14. Создать файл skills.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
+JSON verazhukouskaya$ cat >> skills.json
+
+после ввода данных - enter, ctrl+c
+
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+JSON verazhukouskaya$ git status
+
+JSON verazhukouskaya$ git add .
+
+JSON verazhukouskaya$ git commit -m "two files with favourites and skills"
+
+JSON verazhukouskaya$ git push
+
+ 16. На веб интерфейсе создать файл bug_report.json.
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+В репозитории появился файл с коммитом 'Create...'
+
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Во внешнем репозитории появился файл с коммитом 'Update...'
+
+ 20. Синхронизировать внешний и локальный репозиторий JSON:
+JSON verazhukouskaya$ git fetch
+
+JSON verazhukouskaya$ git pull
+
+XML
+ 21. Создать внешний репозиторий c названием XML.
+создан через web
+
+ 22. Клонировать репозиторий XML на локальный компьютер.
+3 github_terminal verazhukouskaya$ git clone https://github.com/VeraZh2022/XML.git
+
+ 23. Внутри локального XML создать файл “new.xml”.
+3 github_terminal verazhukouskaya$ cd XML/
+XML verazhukouskaya$ touch new.xml
+
+ 24. Добавить файл под гит.
+XML verazhukouskaya$ git status
+
+XML verazhukouskaya$ git add new.xml
+
+ 25. Закоммитить файл.
+XML verazhukouskaya$ git commit -m "the empty fail first commit"
+
+ 26. Отправить файл на внешний GitHub репозиторий.
+XML verazhukouskaya$ git push
+
+ 27. Отредактировать содержание файла “new.xml” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML.
+XML verazhukouskaya$ vim new.xml
+Insert
+ввод данных
+escape
+:wq
+enter
+
+ 28. Отправить изменения на внешний репозиторий.
+XML verazhukouskaya$ git status
+
+XML verazhukouskaya$ git add new.xml
+
+XML verazhukouskaya$ git commit -m "2d commit with personal info"
+
+XML verazhukouskaya$ git push
+
+ 29. Создать файл preferences.xml
+XML verazhukouskaya$ touch preferences.xml
+
+ 30. В файл preferences.xml добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+ XML verazhukouskaya$ cat >> preferences.xml
+ввод данных
+enter
+crtl+c
+
+ 31. Создать файл skills.xml и добавить информацию о скиллах которые будут изучены на курсе в формате XML
+XML verazhukouskaya$ cat > skills.xml
+ввод данных
+enter
+crtl+c
+
+ 32. Сделать коммит в одну строку.
+XML verazhukouskaya$ git add-commit -m 'test'
+
+ 33. Отправить сразу 2 файла на внешний репозиторий.
+XML verazhukouskaya$ git push
+
+ 34. На веб интерфейсе создать файл bug_report.xml.
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Создан файл с коммитом 'Create...'
+
+ 36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Создан файл с коммитом 'bug 77 is added'
+
+ 38. Синхронизировать внешний и локальный репозиторий XML.
+ XML verazhukouskaya$ git fetch
+ XML verazhukouskaya$ git pull
+
+ TXT
+ 1. Создать внешний репозиторий c названием TXT.
+создан через web
+
+ 2. Клонировать репозиторий TXT на локальный компьютер.
+3 github_terminal verazhukouskaya$ git clone https://github.com/VeraZh2022/TXT.git
+
+ 3. Внутри локального TXT создать файл “new.txt”.
+3 github_terminal verazhukouskaya$ cd TXT/
+TXT verazhukouskaya$ touch new.txt
+
+ 4. Добавить файл под гит.
+TXT verazhukouskaya$ git status
+TXT verazhukouskaya$ git add new.txt
+
+ 5. Закоммитить файл.
+TXT verazhukouskaya$ git commit
+
+Или сразу п.4 и п.5: TXT verazhukouskaya$ git commit -am "the empty new.txt is commited"
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+TXT verazhukouskaya$ git push
+
+ 7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT.
+TXT verazhukouskaya$ vim new.txt
+insert
+внесла данные
+escape
+:wq
+enter
+
+ 8. Отправить изменения на внешний репозиторий.
+TXT verazhukouskaya$ git status
+TXT verazhukouskaya$ git add-commit -m "insert data table"
+
+TXT verazhukouskaya$ git push
+
+ 9. Создать файл preferences.txt
+TXT verazhukouskaya$ touch preferences.txt
+
+ 10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+TXT verazhukouskaya$ vim preferences.txt
+insert
+ввод данных
+escape
+:wq
+enter
+
+ 11. Создать файл skills.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
+cat > skills.txt
+внесла данные
+enter
+ctrl+c
+
+ 12. Сделать коммит в одну строку.
+TXT verazhukouskaya$ git add-commit -m"skills are added into the skills.txt"
+
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+TXT verazhukouskaya$ git push
+
+ 14. На веб интерфейсе создать файл bug_report.txt.
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Создан файл с коммитом 'Create'
+
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Создан файл с коммитом 'Update'
+
+ 18. Синхронизировать внешний и локальный репозиторий TXT
+ TXT verazhukouskaya$ git fetch
+
+ TXT verazhukouskaya$ git pull
