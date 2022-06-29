@@ -240,4 +240,4 @@ function checkAge(age) {
 let age = prompt("Enter your age")  
 checkAge(age)
 
-/*4*** запустила этот скрипт через https://playcode.io/javascript:  открылось окно для ввода возраста. 
+//*4*** запустила этот скрипт через https://playcode.io/javascript:  открылось окно для ввода возраста.
